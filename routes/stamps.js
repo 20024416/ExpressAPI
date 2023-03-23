@@ -40,7 +40,7 @@ router.get('/stamps/:id', (req, res, next) => {
 
 // DELETE by ID
 router.delete('/stamps/:id', (req, res, next) => {
-    const id = parseInt(req.params.id) // id references id in parameter
+    const id = parseInt(req.params.id)
     const stampIndex = db.stamps.findIndex(s => s.id == id) || {}
     let deletedStamp = {}
     if (stampIndex > -1) {
@@ -51,7 +51,7 @@ router.delete('/stamps/:id', (req, res, next) => {
 
 // PUT by ID
 router.put('/stamps/:id', (req, res, next) => {
-    const id = parseInt(req.params.id) // id references id in parameter
+    const id = parseInt(req.params.id)
     const stamp = req.body
     const stampIndex = db.stamps.findIndex(s => s.id === id)
     if (stampIndex > -1) {
