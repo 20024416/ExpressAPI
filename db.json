@@ -1,0 +1,108 @@
+{
+    "stamps": [
+        {
+            "id": 1,
+            "name": "Tower Bridge",
+            "value": 10,
+            "color": "Blue",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp1.jpg",
+            "alt": "Tower Bridge"
+        },
+        {
+            "id": 2,
+            "name": "Parthenon",
+            "value": 5,
+            "color": "Blue",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp2.jpg",
+            "alt": "Parthenon"
+        },
+        {
+            "id": 3,
+            "name": "Statue of Liberty",
+            "value": 5,
+            "color": "Red",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp3.jpg",
+            "alt": "Statue of Liberty"
+        },
+        {
+            "id": 4,
+            "name": "Prague",
+            "value": 10,
+            "color": "Blue",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp4.jpg",
+            "alt": "Prague"
+        },
+        {
+            "id": 5,
+            "name": "Golden Gate Bridge",
+            "value": 10,
+            "color": "Purple",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp5.jpg",
+            "alt": "Golden Gate Bridge"
+        },
+        {
+            "id": 6,
+            "name": "Eiffel tower",
+            "value": 5,
+            "color": "Red",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp6.jpg",
+            "alt": "Eiffel tower"
+        },
+        {
+            "id": 7,
+            "name": "Monument Valley",
+            "value": 5,
+            "color": "Brown",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp7.jpg",
+            "alt": "Monument Valley"
+        },
+        {
+            "id": 8,
+            "name": "Big Ben",
+            "value": 5,
+            "color": "Blue",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp8.jpg",
+            "alt": "Big Ben"
+        },
+        {
+            "id": 9,
+            "name": "New York City",
+            "value": 10,
+            "color": "Blue",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp9.jpg",
+            "alt": "New York City"
+        },
+        {
+            "id": 10,
+            "name": "Taj Mahal",
+            "value": 5,
+            "color": "Blue",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp10.jpg",
+            "alt": "Taj Mahal"
+        },
+        {
+            "id": 11,
+            "name": "Willis Tower",
+            "value": 10,
+            "color": "Purple",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp11.jpg",
+            "alt": "Willis Tower"
+        },
+        {
+            "id": 12,
+            "name": "Forbidden City",
+            "value": 5,
+            "color": "Purple",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp12.jpg",
+            "alt": "Forbidden City"
+        },
+        {
+            "id": 13,
+            "name": "Colloseum",
+            "value": 5,
+            "color": "Brown",
+            "image": "https://raw.githubusercontent.com/20024416/dbStamps/main/stamp13.jpg",
+            "alt": "Colloseum"
+        }
+    ]
+}
