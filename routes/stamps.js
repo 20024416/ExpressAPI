@@ -4,10 +4,14 @@ const db = require('./../db.json')
 
 // RestFul API
 router.get('/stamps/:id', (req, res, next) => {
-    const id = parseInt(req.params.id) // id references id in parameter
-    const stamp = db.stamps.find( s => s.id == id) || {}
-    res.json(stamp)
-});
+    const id = parseInt(req.params.id);
+    const stamp = db.stamps.find(s => s.id === id);
+    if (stamp) {
+      res.json(stamp);
+    } else {
+      res.status(404).send(`Stamp with ID ${id} does not exist in Nick's Stamp collection.. Yet.. Gotta catch 'em all!`);
+    }
+  });
 
 router.delete('/stamps/:id', (req, res, next) => {
     const id = parseInt(req.params.id) // id references id in parameter
@@ -38,7 +42,7 @@ router.patch('/stamps/:id', (req, res, next) => {
 });
 
 router.get('/stamps', (req, res, next) => {
-
+    res.json(db.stamps);
 
 });
 
