@@ -7,12 +7,16 @@ router.get('/stamps/:id', (req, res, next) => {
     const id = parseInt(req.params.id) // id references id in parameter
     const stamp = db.stamps.find( s => s.id == id) || {}
     res.json(stamp)
-    
-    res.status(responsCode).json(stamp)
 });
 
 router.delete('/stamps/:id', (req, res, next) => {
-
+    const id = parseInt(req.params.id) // id references id in parameter
+    const stamp = db.stamps.findIndex( s => s.id == id) || {}
+    let deletedStamp = {}
+    if (index > -1) {
+        deletedStamp = db.stamps.splice(index, 1)[0] 
+    }
+    res.json(deletedStamp)
 
 });
 

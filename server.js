@@ -17,13 +17,13 @@ app.use(bodyParser.json()) // parse JSON
 app.use(express.static(path.join(__dirname, "public")))  // create static public folder
 
 // step through the routes in routes folder
-app.use('/', stampRoutes)
+app.use(stampRoutes)
 
 // catch all | send 404
-app.use((res, req, next) => {
-    res.statusCode(404);
+// app.use((res, req, next) => {
+//     res.statusCode(404);
 
-})
+// })
 
 
 app.listen(3001);
