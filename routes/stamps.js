@@ -3,6 +3,27 @@ const router = express.Router();
 const db = require('./../db.json')
 
 // RestFul API
+
+router.get('/stamps/color/:color', (req, res, next) => {
+    const color = req.params.color.toLowerCase();
+    const stamps = db.stamps.filter(s => s.color.toLowerCase() === color);
+    if (stamps.length > 0) {
+        res.status(200).json(stamps);
+    } else {
+        res.status(404).send(`No stamps found with color ${color}`);
+    }
+});
+
+router.get('/stamps/value/:amount', (req, res, next) => {
+    const amount = parseInt(req.params.amount);
+    const stamps = db.stamps.filter(s => s.value > amount);
+    if (stamps.length > 0) {
+        res.status(200).json(stamps);
+    } else {
+        res.status(404).send(`No stamps found with a value greater than ${amount}`);
+    }
+});
+
 router.get('/stamps/:id', (req, res, next) => {
     const id = parseInt(req.params.id);
     const stamp = db.stamps.find(s => s.id === id);
