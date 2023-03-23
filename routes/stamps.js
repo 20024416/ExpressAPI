@@ -11,7 +11,7 @@ router.get('/stamps/color/:color', (req, res, next) => {
     if (stamps.length > 0) {
         res.status(200).json(stamps);
     } else {
-        res.status(404).send("No stamps found with color ${color}");
+        res.status(404).send(`No stamps found with color ${color}`);
     }
 });
 
@@ -22,7 +22,7 @@ router.get('/stamps/value/:amount', (req, res, next) => {
     if (stamps.length > 0) {
         res.status(200).json(stamps);
     } else {
-        res.status(404).send("No stamps found with a value greater than ${amount}");
+        res.status(404).send(`No stamps found with a value greater than ${amount}`);
     }
 });
 
@@ -34,7 +34,7 @@ router.get('/stamps/:id', (req, res, next) => {
     if (stamp) {
         res.status(200).json(stamp);
     } else {
-        res.status(404).send("Stamp with ID ${id} does not exist in Nick's Stamp collection.. Yet.. Gotta catch 'em all!");
+        res.status(404).send((`Stamp with ID ${id} does not exist in Nick's Stamp collection.. Yet.. Gotta catch 'em all!`));
     }
 });
 
@@ -68,9 +68,7 @@ router.patch('/stamps/:id', (req, res, next) => {
     const id = parseInt(req.params.id);
     const stamp = db.stamps.find(s => s.id === id);
     if (!stamp) {
-        const error = new Error("Stamp does not exist in Nick's Stamp collection.. Yet.. Gotta catch 'em all!");
-        error.status = 404;
-        return next(error);
+        res.status(404).send((`Stamp with ID ${id} does not exist in Nick's Stamp collection.. Yet.. Gotta catch 'em all!`));
     }
     stamp.name = req.body.name || stamp.name;
     stamp.value = req.body.value || stamp.value;

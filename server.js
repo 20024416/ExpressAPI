@@ -14,10 +14,10 @@ app.use(express.static(path.join(__dirname, "public")))  // create static public
 app.use(stampRoutes)
 
 // catch all | send 404
-app.use((res, req, next) => {
-   res.status(404);
+// app.use((res, req, next) => {
+//    res.status(404);
 
-})
+// })
 
 
 app.listen(3001);
