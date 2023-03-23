@@ -1,0 +1,34 @@
+const express = require('express');
+const router = express.Router();
+const db = require('./../db.json')
+
+// RestFul API
+router.get('/stamps/:id', (req, res, next) => {
+    const id = parseInt(req.params.id) // id references id in parameter path
+    
+    
+    res.status(responsCode).json(stamp)
+});
+
+router.delete('/stamps/:id', (req, res, next) => {
+
+
+});
+
+router.put('/stamps/:id', (req, res, next) => {
+
+
+});
+
+router.patch('/stamps/:id', (req, res, next) => {
+
+
+});
+
+router.get('/stamps', (req, res, next) => {
+
+
+});
+
+module.exports = router
+
