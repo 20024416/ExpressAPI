@@ -1,0 +1,3 @@
+### Delete a stamp
+DELETE http://localhost:3001/stamps/12
+
