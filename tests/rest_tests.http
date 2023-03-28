@@ -1,3 +1,34 @@
 ### Delete a stamp
 DELETE http://localhost:3001/stamps/12
 
+### Get all by color
+GET http://localhost:3001/stamps/color/red
+
+### Get stamp by id
+GET http://localhost:3001/stamps/4
+
+### Get all stamps
+http://localhost:3001/stamps/
+
+### Set single attribute
+PATCH http://localhost:3001/stamps/5
+{
+    "color": "blue"
+}
+
+### Set multiple attributes
+PATCH http://localhost:3001/stamps/5
+
+{
+    "color": "blue",
+    "value": 10
+}
+
+### Add new stamp
+POST http://localhost:3001/stamps/
+
+{
+    "name": "New stamp",
+    "color": "red",
+    "value": 5
+}
