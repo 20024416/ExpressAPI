@@ -1,22 +1,33 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require ('cors');
+const cors = require('cors');
 const path = require('path')
 const stampRoutes = require('./routes/stamps')
+
+// initiate app
 const app = express()
 
 // execute middle-ware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json()) // parse JSON
 app.use(express.static(path.join(__dirname, "public")))  // create static public folder
-app.use((req, res, next) => {
-res.set('Access-Control-Allow-Origin', '*');
-next();
 
-})
+// add cors
+
+if (process.env.production) {
+   whitelist = ['http://localhost:5173']
+} else {
+   whitelist = ['http://localhost:5173']
+}
+
+const corsOptions = {
+   origin: whitelist
+}
+
+app.use(cors(corsOptions), express.static(path.join(__dirname, "public")))
 
 // step through the routes in routes folder
-app.use(stampRoutes)
+app.use(cors(corsOptions), stampRoutes)
 
 // catch all | send 404
 app.use((req, res) => {
