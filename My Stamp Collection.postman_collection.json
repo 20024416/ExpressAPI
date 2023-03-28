@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "2f955472-597d-420d-8023-48b76464ec95",
+		"name": "My Stamp Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12886172"
+	},
+	"item": [
+		{
+			"name": "stamps",
+			"item": [
+				{
+					"name": "{{url}}/stamps/color/{{color}}",
+					"item": [
+						{
+							"name": "get all red stamps",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/stamps/color/red",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stamps",
+										"color",
+										"red"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Color is Red\", () => {",
+									"  const responseJson = pm.response.json();",
+									"  pm.expect(responseJson.color).to.eql(\"Red\");",
+									"  });"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "stamps/{{id}}",
+					"item": [
+						{
+							"name": "{{url}}/stamps/{{id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"  pm.test(\"Stamp 1 should contain correct properties\", () => {\r",
+											"    pm.response.to.have.jsonBody(\"id\", 1);\r",
+											"    pm.response.to.have.jsonBody(\"name\", \"Tower Bridge\");\r",
+											"    pm.response.to.have.jsonBody(\"value\", 10);\r",
+											"    pm.response.to.have.jsonBody(\"color\", \"Blue\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/stamps/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stamps",
+										"4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "valid id 4",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/stamps/4",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"4"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "valid id 1 test properties",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/stamps/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"1"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "valid id 40",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/stamps/4",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"4"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "{{url}}/stamps/{{id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Color is Red\", () => {\r",
+											"  const responseJson = pm.response.json();\r",
+											"  pm.expect(responseJson.color).to.eql(\"Red\");\r",
+											"  });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/stamps/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stamps",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "valid id 4",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/stamps/4",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"4"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "valid id 40",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/stamps/4",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"4"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "{{url}}/stamps/{{id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/stamps/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stamps",
+										"5"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "set color to blue",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"color\": \"blue\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/stamps/5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"5"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "invalid id 40",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"color\": \"blue\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/stamps/40",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"40"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "{{url}}/stamps/7",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"color\": \"green\",\r\n    \"value\": 20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/stamps/7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stamps",
+										"7"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "valid key:value",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"color\": \"blue\",\r\n    \"value\": 15,\r\n    \"name\": \"Something different\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/stamps/7",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"stamps",
+												"7"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "stamp with id 4",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/stamps/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stamps",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Successful POST request\", () => {",
+									"  pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});",
+									"",
+									"pm.test(\"Content-Type header is application/json\", () => {",
+									"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');",
+									"});",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "get all stamps",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Get all stamps\r",
+									"pm.test(\"Get all stamps\", function () {\r",
+									"    pm.sendRequest('/stamps', function (res) {\r",
+									"        pm.expect(res.status).to.equal(200);\r",
+									"        pm.expect(res.json().length).to.be.above(0);\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stamps",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stamps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/stamps",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"color\": \"blue\",\r\n    \"value\": 15,\r\n    \"name\": \"Something different\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stamps",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stamps"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"  pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Color is Red\", () => {",
+							"  const responseJson = pm.response.json();",
+							"  pm.expect(responseJson.color).to.eql(\"Red\");",
+							"  });",
+							"",
+							"",
+							"",
+							"pm.test(\"Successful POST request\", () => {",
+							"  pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header is application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://c873b158-369e-4d0a-8eef-84d18dceab0e.mock.pstmn.io"
+		},
+		{
+			"key": "id",
+			"value": "1"
+		}
+	]
+}
