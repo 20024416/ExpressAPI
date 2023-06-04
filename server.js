@@ -15,9 +15,9 @@ app.use(express.static(path.join(__dirname, "public")))  // create static public
 // add cors
 
 if (process.env.production) {
-   whitelist = ['http://localhost:5173']
+   whitelist = ['http://localhost:5173', 'https://shiny-biscotti-01c10e.netlify.app']
 } else {
-   whitelist = ['http://localhost:5173']
+   whitelist = ['http://localhost:5173', 'https://shiny-biscotti-01c10e.netlify.app']
 }
 
 const corsOptions = {
